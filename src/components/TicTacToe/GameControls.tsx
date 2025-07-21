@@ -22,13 +22,14 @@ export const GameControls = ({ gameMode, onGameModeChange, onReset, scores }: Ga
             onClick={() => onGameModeChange('pvp')}
             className={cn(
               "w-full flex items-center justify-center gap-2 h-12 transition-all duration-300 text-sm sm:text-base",
+              "truncate",
               gameMode === 'pvp' 
                 ? "bg-gradient-to-r from-primary to-primary-glow shadow-lg" 
                 : "hover:bg-primary/10 border-border/50"
             )}
           >
             <User size={18} />
-            <span className="hidden sm:inline">Player vs Player</span>
+            <span className="hidden sm:inline whitespace-nowrap">P vs P</span>
             <span className="sm:hidden">PvP</span>
           </Button>
           <Button
@@ -36,13 +37,14 @@ export const GameControls = ({ gameMode, onGameModeChange, onReset, scores }: Ga
             onClick={() => onGameModeChange('pvc')}
             className={cn(
               "w-full flex items-center justify-center gap-2 h-12 transition-all duration-300 text-sm sm:text-base",
+              "truncate",
               gameMode === 'pvc' 
                 ? "bg-gradient-to-r from-primary to-primary-glow shadow-lg" 
                 : "hover:bg-primary/10 border-border/50"
             )}
           >
             <Bot size={18} />
-            <span className="hidden sm:inline">Player vs Computer</span>
+            <span className="hidden sm:inline whitespace-nowrap">P vs Comp</span>
             <span className="sm:hidden">PvC</span>
           </Button>
         </div>
